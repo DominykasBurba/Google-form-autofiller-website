@@ -1,0 +1,62 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-weight: 700;
+  font-size: .88rem;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button > span {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.primary { background: #7b4dff; color: #fff; }
+.primary:hover { background: #6940e3; box-shadow: 0 8px 22px rgba(123, 77, 255, .24); }
+.secondary { background: transparent; border-color: var(--line); color: #e9ecef; }
+.secondary:hover { border-color: var(--violet); background: #111316; box-shadow: 0 8px 22px rgba(123, 77, 255, .16); }
+
+.section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr);
+  gap: 38px;
+  border-block-start: 1px solid var(--line);
+  padding-block: clamp(42px, 7vw, 82px);
+}
+
+.section-heading h2 { margin-block-end: 12px; font-size: clamp(1.8rem, 4vw, 3.25rem); line-height: 1.06; letter-spacing: -.055em; }
+.section-heading p { margin-block-end: 0; }
+.guide-list { min-width: 0; }
+.guide { border-block-end: 1px solid var(--line); }
+.guide:first-child { border-block-start: 1px solid var(--line); }
+.guide summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding-block: 17px;
+  cursor: pointer;
+  list-style: none;
+}
+.guide summary::-webkit-details-marker { display: none; }
+.guide summary::after { content: '+' / ''; color: var(--violet); font-size: 1.35rem; }
+.guide[open] summary::after { content: '−' / ''; }
+.guide summary:hover strong { color: var(--violet); }
+.summary-text { display: block; margin-block-start: 5px; color: var(--muted); font-size: .9rem; line-height: 1.4; }
+.guide-body { padding-block-end: 18px; color: var(--muted); line-height: 1.55; }
+.guide-body p, .guide-body ol { margin: 0; }
+.guide-body ol { padding-inline-start: 1.4rem; }
+.guide-body li + li { margin-block-start: 7px; }
+
+@media (max-width: 850px) {
+  .section { grid-template-columns: 1fr; gap: 24px; }
+}
