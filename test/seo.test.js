@@ -28,7 +28,7 @@ test('crawl files and verification file point to the production domain', async (
     readProjectFile('public', 'google18c0928d85ca1fc4.html')
   ]);
   assert.match(robots, /Sitemap: https:\/\/formautofiller\.com\/sitemap\.xml/);
-  for (const page of ['/', '/guides.html', '/privacy.html', '/terms.html', '/contact.html']) {
+  for (const page of ['/', '/guides', '/privacy', '/terms', '/contact']) {
     assert.match(sitemap, new RegExp(`<loc>https:\\/\\/formautofiller\\.com${page.replace('.', '\\.')}</loc>`));
   }
   assert.equal(verification.trim(), 'google-site-verification: google18c0928d85ca1fc4.html');
@@ -38,7 +38,7 @@ test('public support pages have unique crawlable titles and canonicals', async (
   for (const page of ['guides', 'privacy', 'terms', 'contact']) {
     const html = await readProjectFile(`${page}.html`);
     assert.match(html, /<title>[^<]+<\/title>/);
-    assert.match(html, new RegExp(`https:\\/\\/formautofiller\\.com\\/${page}\\.html`));
+    assert.match(html, new RegExp(`https:\\/\\/formautofiller\\.com\\/${page}`));
     assert.match(html, /<h1>[^<]+<\/h1>/);
   }
 });

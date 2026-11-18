@@ -37,7 +37,6 @@ The site uses feature folders, also called vertical slices. Each folder owns the
 ## Public pages and SEO
 
 - `index.html` contains the homepage metadata, Google verification tag, canonical URL, social cards, and WebSite/Organization structured data.
-- `guides.html` is the crawlable tutorial page for supported Google Forms question types.
-- `privacy.html`, `terms.html`, and `contact.html` provide public trust and support pages.
+- `guides.html`, `privacy.html`, `terms.html`, and `contact.html` build as clean public routes: `/guides`, `/privacy`, `/terms`, and `/contact`.
 - `public/robots.txt` and `public/sitemap.xml` are submitted to Google Search Console after the custom domain is live.
 - `public/favicon.png` and `public/site.webmanifest` provide the site identity and browser icons.

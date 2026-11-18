@@ -17,6 +17,26 @@ export function createApp({ distDir = defaultDist, logger = console } = {}) {
   app.use('/api/guides', guideRoutes);
   app.use('/api', (_req, res) => res.status(404).json({ error: 'API route not found.' }));
 
+  const publicPages = {
+    '/guides': 'guides.html',
+    '/privacy': 'privacy.html',
+    '/terms': 'terms.html',
+    '/contact': 'contact.html'
+  };
+
+  for (const [route, file] of Object.entries(publicPages)) {
+    app.get(route, (_req, res, next) => {
+      res.sendFile(join(distDir, file), error => {
+        if (error?.code === 'ENOENT') {
+          res.status(503).type('text').send('Website build missing. Run npm run build.');
+        } else if (error) {
+          next(error);
+        }
+      });
+    });
+    app.get(`${route}.html`, (_req, res) => res.redirect(308, route));
+  }
+
   app.get('/', (_req, res, next) => {
     res.sendFile(join(distDir, 'index.html'), error => {
       if (error?.code === 'ENOENT') {

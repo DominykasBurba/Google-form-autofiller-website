@@ -64,7 +64,7 @@ a { color: inherit; }
 .static-content a:hover { color: #a98cff; }
 
 .static-main {
-  width: min(860px, calc(100% - 64px));
+  width: min(1160px, calc(100% - 64px));
   margin-inline: auto;
   padding-block: clamp(58px, 9vw, 112px);
 }
@@ -79,7 +79,7 @@ a { color: inherit; }
 }
 
 .static-content h1 {
-  max-width: 760px;
+  max-width: 1080px;
   margin: 0 0 22px;
   font-size: clamp(2.6rem, 7vw, 5.2rem);
   line-height: .98;
@@ -100,7 +100,7 @@ a { color: inherit; }
 }
 
 .static-lead {
-  max-width: 680px;
+  max-width: 960px;
   margin: 0 0 34px;
   color: var(--muted);
   font-size: 1.15rem;
@@ -165,6 +165,21 @@ a { color: inherit; }
   font-weight: 700;
   text-decoration: none;
 }
+
+.static-back-top {
+  margin: 0 0 42px;
+  color: #b7a1ff;
+}
+
+.static-back-top::before {
+  content: "←";
+  display: inline-block;
+  margin-right: 8px;
+  color: #e9ecef;
+  transition: transform 160ms ease;
+}
+
+.static-back-top:hover::before { transform: translateX(-3px); }
 
 @media (max-width: 620px) {
   .static-header-inner,
