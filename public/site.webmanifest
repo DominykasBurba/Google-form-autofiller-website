@@ -1,0 +1,16 @@
+{
+  "name": "Google Form Auto Filler",
+  "short_name": "Form Auto Filler",
+  "description": "Reuse saved answers in Google Forms.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111316",
+  "theme_color": "#111316",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ]
+}

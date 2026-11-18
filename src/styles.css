@@ -45,6 +45,7 @@ p { line-height: 1.65; }
 nav { display: flex; gap: 24px; }
 nav a, .footer-inner a { color: var(--muted); text-decoration: none; font-size: .9rem; }
 nav a:hover, .footer-inner a:hover { color: var(--violet); }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px 18px; }
 .hero {
   display: grid;
   grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
@@ -79,6 +80,7 @@ h1 em { color: var(--violet); font-style: normal; }
   .header-inner { min-height: 64px; flex-wrap: wrap; gap: 10px 14px; padding-block: 10px; }
   nav { gap: 14px; }
   .footer-inner { flex-wrap: wrap; gap: 8px; padding-block: 14px; }
+  .footer-links { justify-content: flex-start; }
 }
 
 @media (prefers-reduced-motion: no-preference) {

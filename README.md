@@ -33,3 +33,11 @@ The site uses feature folders, also called vertical slices. Each folder owns the
 - `src/features/` contains the autofill demo, screenshots, tutorials, and FAQ.
 - `src/shared/components.jsx` contains the shared button, section, and expandable panel.
 - `server/features/guides/` contains the tutorial content and API routes.
+
+## Public pages and SEO
+
+- `index.html` contains the homepage metadata, Google verification tag, canonical URL, social cards, and WebSite/Organization structured data.
+- `guides.html` is the crawlable tutorial page for supported Google Forms question types.
+- `privacy.html`, `terms.html`, and `contact.html` provide public trust and support pages.
+- `public/robots.txt` and `public/sitemap.xml` are submitted to Google Search Console after the custom domain is live.
+- `public/favicon.png` and `public/site.webmanifest` provide the site identity and browser icons.
