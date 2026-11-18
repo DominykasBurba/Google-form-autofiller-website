@@ -17,6 +17,7 @@ test('homepage exposes the verification and search metadata', async () => {
   assert.match(html, /rel="canonical" href="https:\/\/formautofiller\.com\//);
   assert.match(html, /property="og:title"/);
   assert.match(html, /application\/ld\+json/);
+  assert.match(html, /href="\/brand-icon\.svg"/);
   assert.match(html, /href="\/favicon\.png"/);
 });
 

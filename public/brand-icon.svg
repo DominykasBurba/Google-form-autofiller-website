@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Google Form Auto Filler</title>
+  <desc id="desc">A form card with an autofill spark.</desc>
+  <defs>
+    <linearGradient id="surface" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8d67ff" />
+      <stop offset="1" stop-color="#6d3fff" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#111316" />
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="url(#surface)" stroke-width="3" />
+  <rect x="14" y="17" width="31" height="32" rx="5" fill="#e9ecef" />
+  <path d="M20 25h18M20 31h11" fill="none" stroke="#111316" stroke-linecap="round" stroke-width="3" />
+  <path d="m20 40 3.4 3.4 6.1-6.4" fill="none" stroke="#7b4dff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5" />
+  <path d="M46 10.5 48.2 16l5.3 2.2-5.3 2.2-2.2 5.5-2.2-5.5-5.3-2.2 5.3-2.2Z" fill="#7b4dff" />
+  <path d="M52 31v10M47 36h10" stroke="#e9ecef" stroke-linecap="round" stroke-width="2.5" />
+</svg>

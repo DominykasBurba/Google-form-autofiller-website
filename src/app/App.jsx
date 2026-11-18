@@ -13,7 +13,7 @@ export function App() {
       <a className="skip-link" href="#main">Skip to content</a>
       <header className="site-header">
         <div className="shell header-inner">
-          <a href="#" className="brand"><span className="brand-mark" aria-hidden="true">✓</span> Google Form Auto Filler</a>
+          <a href="#" className="brand"><img className="brand-icon" src="/brand-icon.svg" alt="" width="32" height="32" aria-hidden="true" /> Google Form Auto Filler</a>
           <nav aria-label="Main navigation">
             <a href="#screenshots">Photos</a>
             <a href="#tutorials">Tutorials</a>
