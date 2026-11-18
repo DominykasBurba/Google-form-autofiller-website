@@ -31,15 +31,11 @@ p { line-height: 1.65; }
 }
 
 .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 730; text-decoration: none; }
-.brand-mark {
-  display: inline-grid;
-  place-items: center;
+.brand-icon {
+  display: block;
   width: 32px;
   height: 32px;
   flex: 0 0 auto;
-  border-radius: 8px;
-  background: #7b4dff;
-  color: #fff;
 }
 
 nav { display: flex; gap: 24px; }
