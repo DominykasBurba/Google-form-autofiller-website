@@ -61,12 +61,14 @@ test('serves the built homepage and assets, with a plain 404 for unknown pages',
   const distDir = await mkdtemp(join(tmpdir(), 'form-website-test-'));
   const index = join(distDir, 'index.html');
   const asset = join(distDir, 'site.css');
+  const guides = join(distDir, 'guides.html');
   t.after(async () => {
-    await Promise.all([unlink(index), unlink(asset)]);
+    await Promise.all([unlink(index), unlink(asset), unlink(guides)]);
     await rmdir(distDir);
   });
   await writeFile(index, '<h1>Google Form Auto Filler</h1>');
   await writeFile(asset, 'body { margin: 0; }');
+  await writeFile(guides, '<h1>Google Forms tutorials</h1>');
   const request = await start(t, { distDir });
   const home = await request('/');
   assert.equal(home.status, 200);
@@ -76,6 +78,12 @@ test('serves the built homepage and assets, with a plain 404 for unknown pages',
   assert.equal(stylesheet.status, 200);
   assert.match(stylesheet.headers.get('content-type'), /text\/css/);
   assert.equal(await stylesheet.text(), 'body { margin: 0; }');
+  const cleanPage = await request('/guides');
+  assert.equal(cleanPage.status, 200);
+  assert.match(await cleanPage.text(), /Google Forms tutorials/);
+  const legacyPage = await request('/guides.html', { redirect: 'manual' });
+  assert.equal(legacyPage.status, 308);
+  assert.equal(legacyPage.headers.get('location'), '/guides');
   const missing = await request('/missing');
   assert.equal(missing.status, 404);
   assert.equal(await missing.text(), 'Page not found.');

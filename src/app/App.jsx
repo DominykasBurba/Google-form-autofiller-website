@@ -7,17 +7,27 @@ import { Button } from '../shared/components.jsx';
 
 const storeUrl = 'https://chromewebstore.google.com/detail/google-form-auto-filler/fpjfgikplnkhcjbencphdmgeihhcckkb';
 
+function scrollToSection(event, id) {
+  const target = document.getElementById(id);
+
+  if (!target) return;
+
+  event.preventDefault();
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  window.history.replaceState(null, '', '/');
+}
+
 export function App() {
   return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>
       <header className="site-header">
         <div className="shell header-inner">
-          <a href="#" className="brand"><img className="brand-icon" src="/brand-icon.svg" alt="" width="32" height="32" aria-hidden="true" /> Google Form Auto Filler</a>
+          <a href="/" className="brand"><img className="brand-icon" src="/brand-icon.svg" alt="" width="32" height="32" aria-hidden="true" /> Google Form Auto Filler</a>
           <nav aria-label="Main navigation">
-            <a href="#screenshots">Photos</a>
-            <a href="#tutorials">Tutorials</a>
-            <a href="#faq">FAQ</a>
+            <a href="/" onClick={(event) => scrollToSection(event, 'screenshots')}>Photos</a>
+            <a href="/" onClick={(event) => scrollToSection(event, 'tutorials')}>Tutorials</a>
+            <a href="/" onClick={(event) => scrollToSection(event, 'faq')}>FAQ</a>
           </nav>
         </div>
       </header>
@@ -26,7 +36,7 @@ export function App() {
           <div className="hero-copy">
             <h1 id="hero-title">Fill Google Forms <em>with saved answers.</em></h1>
             <p>Save your question-and-answer pairs once and fill matching fields with a click. Handy for testing forms and repeat data entry.</p>
-            <div className="hero-actions"><Button href={storeUrl}>Add to Chrome <span aria-hidden="true">↗</span></Button><Button href="#tutorials" variant="secondary">Read the tutorials</Button></div>
+            <div className="hero-actions"><Button href={storeUrl}>Add to Chrome <span aria-hidden="true">↗</span></Button><Button href="/" variant="secondary" onClick={(event) => scrollToSection(event, 'tutorials')}>Read the tutorials</Button></div>
           </div>
           <Demo />
         </section>
@@ -38,10 +48,10 @@ export function App() {
         <div className="shell footer-inner">
           <span>Google Form Auto Filler</span>
           <nav className="footer-links" aria-label="Footer navigation">
-            <a href="/guides.html">Tutorials</a>
-            <a href="/privacy.html">Privacy</a>
-            <a href="/terms.html">Terms</a>
-            <a href="/contact.html">Contact</a>
+            <a href="/guides">Tutorials</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+            <a href="/contact">Contact</a>
             <a href={storeUrl} target="_blank" rel="noopener noreferrer">Chrome Web Store ↗</a>
           </nav>
         </div>
