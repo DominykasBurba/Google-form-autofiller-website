@@ -35,7 +35,16 @@ export function App() {
         <Faq />
       </main>
       <footer className="site-footer">
-        <div className="shell footer-inner"><span>Google Form Auto Filler</span><a href={storeUrl}>Chrome Web Store ↗</a></div>
+        <div className="shell footer-inner">
+          <span>Google Form Auto Filler</span>
+          <nav className="footer-links" aria-label="Footer navigation">
+            <a href="/guides.html">Tutorials</a>
+            <a href="/privacy.html">Privacy</a>
+            <a href="/terms.html">Terms</a>
+            <a href="/contact.html">Contact</a>
+            <a href={storeUrl} target="_blank" rel="noopener noreferrer">Chrome Web Store ↗</a>
+          </nav>
+        </div>
       </footer>
     </>
   );
